@@ -1,5 +1,5 @@
 import pygame
-
+import config
 
 class ScoreCounter:
     def __init__(self,screen,x,y,font_size):
@@ -19,11 +19,11 @@ class ScoreCounter:
         self.rect = self.surface.get_rect(topleft=(self.x, self.y))
 
         self.count = 0
-
+        
     def update(self):
         self.count = self.count + 1
         if self.count == FPS:
-            self.score += 10
+            self.score += 5
             self.count = 0
 
         self.surface = self.font.render(f"SCORE:{self.score}", True, (255,255,255))
